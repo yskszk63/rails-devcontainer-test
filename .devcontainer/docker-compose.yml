@@ -1,0 +1,9 @@
+services:
+  dev:
+    build: ./dev
+    image: rails-devcontainer-test_devcontainer_dev
+    command: sleep inf
+    volumes:
+      - ..:/workspace
+    ports:
+      - 3000:3000
