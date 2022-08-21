@@ -13,6 +13,9 @@ threads min_threads_count, max_threads_count
 #
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
+# https://stackoverflow.com/questions/28668436/how-to-change-the-default-binding-ip-of-rails-4-2-development-server
+set_default_host '0.0.0.0'
+
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
 port ENV.fetch("PORT") { 3000 }
