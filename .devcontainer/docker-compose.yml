@@ -3,7 +3,13 @@ services:
     build: ./dev
     image: rails-devcontainer-test_devcontainer_dev
     command: sleep inf
+    working_dir: /workspace
     volumes:
       - ..:/workspace
     ports:
       - 3000:3000
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
