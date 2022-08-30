@@ -1,24 +1,58 @@
-# README
+# Wat's this
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- My first ruby on rails
+- with devcontainer
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+### Up
 
-* System dependencies
+```
+devcontainer up --workspace-folder . --remove-existing-container
+```
 
-* Configuration
+### Bundle install
 
-* Database creation
+```
+devcontainer exec --workspace-folder . bundle install
+```
 
-* Database initialization
+### DB migrate
 
-* How to run the test suite
+```
+devcontainer exec --workspace-folder . rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### DB seed
 
-* Deployment instructions
+```
+devcontainer exec --workspace-folder . rails db:seed
+```
 
-* ...
+### Rails server
+
+```
+docker exec -it -uvscode rails-devcontainer-test_devcontainer-dev-1 rails server
+```
+
+### Curl!
+
+```
+$ curl -sSf localhost:3000/todos|jq
+{
+  "data": [
+    {
+      "id": 1,
+      "task": "buy milk",
+      "created_at": "2022-08-30T12:38:30.085Z",
+      "updated_at": "2022-08-30T12:38:30.085Z"
+    },
+    {
+      "id": 2,
+      "task": "buy chocolate",
+      "created_at": "2022-08-30T12:38:30.098Z",
+      "updated_at": "2022-08-30T12:38:30.098Z"
+    }
+  ]
+}
+```
