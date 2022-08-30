@@ -6,6 +6,7 @@ services:
     working_dir: /workspace
     volumes:
       - ..:/workspace
+      - bundle:/usr/local/bundle
     ports:
       - 3000:3000
 
@@ -13,3 +14,6 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: secret
+
+volumes:
+  bundle:
